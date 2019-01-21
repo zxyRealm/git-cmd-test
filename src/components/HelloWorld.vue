@@ -7,26 +7,11 @@
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <h2>{{random}}</h2> 
+    <button @click="random = randomNum(min, max)">生成随机数</button>
+    <input type="number" v-model="min">
+    <input type="number" v-model="max">
+    <button @click="asyncFun">异步循环</button>
   </div>
 </template>
 
@@ -35,6 +20,46 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data () {
+    return {
+      random: '',
+      min: null,
+      max: null
+    }
+  },
+  created () {
+
+  },
+  methods:{
+      asyncFun () {
+        for (let i = 0; i < 10; i++) {
+          setTimeout(() => {
+            console.log(i)
+          }, this.randomNum(3, 10) * 100)
+        }
+      },
+      randomNum (minNum, maxNum) {
+          if (minNum) {
+            minNum = Number(minNum)
+          }
+          if (maxNum) {
+            maxNum = Number(maxNum)
+          }
+          switch(arguments.length) {
+            case 1:
+            console.log(1)
+              return parseInt(Math.random() * (minNum + 1), 10)
+            // break;
+            case 2:
+            console.log(2, minNum, maxNum)
+              return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+            // break
+            default:
+            console.log(0)
+              return 0
+          }
+      }
   }
 }
 </script>

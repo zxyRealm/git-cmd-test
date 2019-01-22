@@ -12,6 +12,7 @@
     <input type="number" v-model="min">
     <input type="number" v-model="max">
     <button @click="asyncFun">异步循环</button>
+    <p>我是第二步是修改的哦！！！！！</p>
   </div>
 </template>
 

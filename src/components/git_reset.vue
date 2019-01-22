@@ -12,7 +12,7 @@
     <!-- <input type="number" v-model="min">
     <input type="number" v-model="max">
     <button @click="asyncFun">异步循环</button> -->
-    <p>git reset 单个文件练习</p>
+    <h2>单文件回滚第二步，这是第二步测试哦！</h2>
   </div>
 </template>
 

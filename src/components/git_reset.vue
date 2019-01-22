@@ -12,7 +12,9 @@
     <!-- <input type="number" v-model="min">
     <input type="number" v-model="max">
     <button @click="asyncFun">异步循环</button> -->
-    <h2>单文件回滚第二步，这是第二步测试哦！</h2>
+    <ul>
+      <li>这是单文件回滚第三步了。。。。。</li>
+    </ul>
   </div>
 </template>
 

@@ -14,11 +14,10 @@
     },
     methods: {
       getServeIp () {
-        GetList().then(res => {
-          console.log(res)
+        GetList().then(() => {
+          // console.log(res)
         })
       }
-
     },
     created () {
       // console.log(process.env)

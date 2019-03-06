@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>着色器模拟box-shadow效果</title>
+    <script src="../three/build/three.min.js"></script>
+    <script src="../three/controls/OrbitControls.js"></script>
+    <script src="../three/renderers/SVGRenderer.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        canvas {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="shadow_canvas"></div>
+<canvas id="gl_canvas"></canvas>
+<script>
+  var container, scene, camera, renderer
+    function initData () {
+      container = document.getElementById('shadow_canvas')
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 5000);
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      container.appendChild(renderer.domElement)
+    }
+
+    function animate () {
+      requestAnimationFrame(animate)
+      renderer.render(scene, camera)
+    }
+
+    function createGl () {
+      var canvas = document.getElementById('gl_canvas');
+      var gl = canvas.getContext('experimental-webgl')
+      console.log(gl)
+    }
+    createGl()
+    // window.onload = function () {
+    //   initData()
+    //   animate()
+    // }
+</script>
+</body>
+</html>

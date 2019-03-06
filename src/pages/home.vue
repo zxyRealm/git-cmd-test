@@ -1,6 +1,6 @@
 <template>
  <div class="page">
-     dev 提交后修改了文件，哈哈哈哈哈！
+     <iframe scrolling="no" class="three__iframe" src="/public/html/shadow.html" border="0" frameborder="0"></iframe>
  </div>
 </template>
 
@@ -17,5 +17,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .three__iframe{
+        width: 80%;
+        height: 600px;
+        margin: 0 auto;
+    }
 </style>

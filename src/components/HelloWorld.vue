@@ -7,7 +7,8 @@
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <h3>Installed CLI Plugins</h3>
-    <h2>{{random}}</h2> 
+    <h2>{{random}}</h2>
+    <router-link to="/index">首页</router-link>
     <button @click="random = randomNum(min, max)">生成随机数</button>
     <input type="number" v-model="min">
     <input type="number" v-model="max">

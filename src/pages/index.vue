@@ -2,6 +2,7 @@
     <div class="page">
         <h2>分支提交了</h2>
         <router-link to="/home">主页</router-link>
+        <router-link to="/data/list">数据列表</router-link>
     </div>
 </template>
 

@@ -3,11 +3,24 @@
     <router-view></router-view>
   </div>
 </template>
-
 <script>
-
+// const DataLit = () => import('@/pages/list')
 export default {
-  name: 'app'
+  name: 'app',
+  created () {
+    this.$router.addRoutes([
+      {
+        path: '/data/list',
+        name: 'DataList',
+        component: () => import('@/pages/list')
+      },
+      {
+        path: '*',
+        name: 'error',
+        component: () => import('@/pages/error404')
+      }
+    ])
+  }
 }
 </script>
 

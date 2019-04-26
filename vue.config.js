@@ -5,6 +5,7 @@ module.exports = {
   assetsDir: 'public',
   productionSourceMap: false,
   devServer: {
+    contentBase: './',
     disableHostCheck: true, // 取消hostname检查
     host: '0.0.0.0',
     port: '8802',

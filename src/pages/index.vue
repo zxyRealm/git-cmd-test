@@ -3,6 +3,7 @@
         <h2>分支提交了</h2>
         <router-link to="/home">主页</router-link>
         <router-link to="/data/list">数据列表</router-link>
+        <object data="/public/VideoJS.swf" type=""></object>
     </div>
 </template>
 
